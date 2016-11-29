@@ -166,7 +166,7 @@ extension Jukebox {
     
     - parameter item: item to be removed
     */
-    public func remove(item: JukeboxItem) {
+    open func remove(item: JukeboxItem) {
         if let index = queuedItems.index(where: {$0.identifier == item.identifier}) {
             queuedItems.remove(at: index)
         }
@@ -177,7 +177,7 @@ extension Jukebox {
      
      - parameter url: the item URL
      */
-    public func removeItems(withURL url : URL) {
+    open func removeItems(withURL url : URL) {
         let indexes = queuedItems.indexesOf({$0.URL as URL == url})
         for index in indexes {
             queuedItems.remove(at: index)
